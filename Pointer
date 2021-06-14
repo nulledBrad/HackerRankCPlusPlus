@@ -1,0 +1,43 @@
+Complete the update function in the editor below.
+
+update has the following parameters:
+
+int *a: an integer
+int *b: an integer
+Returns
+
+The function is declared with a void return type, so there is no value to return. Modify the values in memory so that  contains their sum and  contains their absoluted difference.
+
+
+Input Format
+
+Input will contain two integers,  and , separated by a newline.
+
+Sample Input
+
+
+SOLUTION:
+#include <stdio.h>
+//add library for ABsolute Value
+#include <stdlib.h>
+
+void update(int *a,int *b) {
+    //create two temp variables so we dont update memory
+    int TempB = abs(*a - *b);  
+    int TempA = *a + *b;
+    // now set the memory since we need the pointer to not be updated before we calculate the second value
+    *a = TempA;
+    *b = TempB;
+     
+}
+
+int main() {
+    int a, b;
+    int *pa = &a, *pb = &b;
+    
+    scanf("%d %d", &a, &b);
+    update(pa, pb);
+    printf("%d\n%d", a, b);
+
+    return 0;
+}
