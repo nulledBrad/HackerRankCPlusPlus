@@ -1,0 +1,35 @@
+
+PROBLEM:
+The diagram below depicts our assembled Sample Input:
+
+variable-length-arrays.png
+
+We perform the following  queries:
+
+Find the array located at index , which corresponds to . We must print the value at index  of this array which, as you can see, is .
+Find the array located at index , which corresponds to . We must print the value at index  of this array which, as you can see, is .
+
+SOLUTION:
+  //DEFINES TWO INTEGERSZ
+    int n;
+    int q;
+    //TAKES IN THE INTEGERS FROM VALUES
+    cin >> n >> q;
+    //SETS UP A VECTOR TO THE SIZE OF VALUES
+    vector<int> a[n];
+    //LOOPS TO GET THE VALUE OF THE SECOND 
+    for(int i = 0; i < n; i++){
+        int m;
+        cin >> m;
+        int o;
+        for(int j = 0; j < m; j++){
+            cin >> o;
+            a[i].push_back(o);
+        }
+    }
+    
+    int r, s;
+    for(int k = 1; k <= q; k++){
+        cin >> r >> s;
+        cout << a[r][s] << endl;
+    }
